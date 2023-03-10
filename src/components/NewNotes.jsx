@@ -13,6 +13,7 @@ import {
   RichToolbar,
 } from "react-native-pell-rich-editor";
 import uuid from "react-native-uuid";
+import { getNotes, setNotes } from "../utils";
 
 const NewNotes = ({ navigation }) => {
   const [notesTxt, setNotesTxt] = useState("");
@@ -23,12 +24,14 @@ const NewNotes = ({ navigation }) => {
       id: uuid.v4(),
       text: notesTxt,
     });
-    navigation.navigate("Home");
+    navigation.navigate("Home", {
+      notes: getNotes(),
+    });
   };
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handleCustomAction}>
         <Text>✔️</Text>
       </TouchableOpacity>
       <RichToolbar
@@ -44,12 +47,7 @@ const NewNotes = ({ navigation }) => {
           actions.setStrikethrough,
           actions.undo,
           actions.redo,
-          "customAction",
         ]}
-        iconMap={{
-          customAction: "✔️",
-        }}
-        customAction={handleCustomAction}
       />
       <ScrollView>
         <KeyboardAvoidingView
@@ -60,7 +58,7 @@ const NewNotes = ({ navigation }) => {
             initialFocus
             ref={richText}
             initialHeight={500}
-            onBlur={(descriptionText) => {
+            onChange={(descriptionText) => {
               setNotesTxt(descriptionText);
             }}
           />

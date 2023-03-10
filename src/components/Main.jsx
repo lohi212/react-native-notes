@@ -4,11 +4,11 @@ import AddNotes from "./AddNotes";
 import AppHeader from "./AppHeader";
 import NotesList from "./NotesList";
 
-const Main = ({ navigation }) => {
+const Main = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       <AppHeader />
-      <NotesList />
+      <NotesList route={route} />
       <AddNotes navigation={navigation} />
     </View>
   );
