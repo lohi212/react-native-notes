@@ -1,7 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import uuid from "react-native-uuid";
-import Header from "./src/components/Header";
+import AppHeader from "./src/components/AppHeader";
+import Main from "./src/components/Main";
 import NotesList from "./src/components/NotesList";
 
 export default function App() {
@@ -10,8 +11,7 @@ export default function App() {
     <View style={styles.container}>
       <SafeAreaView>
         <StatusBar style="auto" />
-        <Header />
-        <NotesList />
+        <Main />
       </SafeAreaView>
     </View>
   );
