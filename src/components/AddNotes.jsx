@@ -1,9 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-const AddNotes = () => {
+const AddNotes = ({ navigation }) => {
   return (
-    <TouchableOpacity style={styles.button}>
+    <TouchableOpacity
+      style={styles.button}
+      onPress={() => navigation.navigate("Create")}
+    >
       <Text style={styles.textContainer}>+</Text>
     </TouchableOpacity>
   );

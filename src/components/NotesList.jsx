@@ -1,7 +1,6 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { getNotes } from "../utils";
-import AddNotes from "./AddNotes";
 
 const NotesList = () => {
   const notesListItems = getNotes();
@@ -12,7 +11,6 @@ const NotesList = () => {
       ) : (
         <Text>No notes added yet!</Text>
       )}
-      <AddNotes />
     </View>
   );
 };
