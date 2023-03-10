@@ -34,6 +34,7 @@ const NotesList = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     height: "94%",
+    flexDirection: "row",
   },
 });
 
