@@ -22,8 +22,8 @@ const NotesList = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      {(notesListItems || []).length ? (
-        notesListItems.map((ele) => <NotesListItem item={ele} />)
+      {notesListItems.length ? (
+        (notesListItems || []).map((ele) => <NotesListItem item={ele} />)
       ) : (
         <Text>No notes added yet!</Text>
       )}
@@ -35,6 +35,9 @@ const styles = StyleSheet.create({
   container: {
     height: "94%",
     flexDirection: "row",
+    // justifyContent: "space-between",
+    flex: 1,
+    flexWrap: "wrap",
   },
 });
 
