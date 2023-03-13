@@ -32,7 +32,7 @@ const NewNotes = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={handleCustomAction}>
-        <Text>✔️</Text>
+        <Text style={styles.link}>Done</Text>
       </TouchableOpacity>
       <RichToolbar
         editor={richText}
@@ -74,6 +74,9 @@ const styles = StyleSheet.create({
   },
   keyboard: {
     flex: 1,
+  },
+  link: {
+    color: "#6d98fa",
   },
 });
 
